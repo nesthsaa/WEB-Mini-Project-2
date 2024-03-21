@@ -1,0 +1,139 @@
+/* Gaya untuk bagian "home" */
+/* Gaya untuk bagian "home" */
+#home {
+  font-family: Arial, sans-serif;
+  background-image: url(https://i2.wp.com/wallpapercave.com/wp/wp2973341.jpg); /* Ganti 'url_gambar_anda_di_sini' dengan URL gambar yang ingin Anda gunakan */
+  background-size: cover; /* Untuk memastikan gambar mengisi seluruh area background */
+  background-repeat: no-repeat; /* Agar gambar tidak diulang */
+  margin-bottom: 20px;
+  padding: 50px 0; /* Tambahkan padding atas dan bawah */
+}
+
+#home .text-center {
+  margin-top: 100px; /* Atur sesuai kebutuhan Anda */
+}
+
+#home h1 {
+  color: #333;
+  font-weight: bold;
+  font-size: 50px;
+}
+
+#home .btn-primary {
+  background-color: #ff3399;
+  border-color: #fff
+}
+
+#home .text-center {
+  margin-top: 100px; /* Atur sesuai kebutuhan Anda */
+}
+
+#home h1 {
+  color: #333;
+  font-weight: bold;
+  font-size: 50px;
+}
+
+#home .btn-primary {
+  background-color: #ff3399;
+  border-color: #ff3399;
+}
+
+#home .btn-primary:hover {
+  background-color: #fff;
+  border-color: #ff3399;
+  color: #333;
+}
+
+/* Gaya untuk gambar profil */
+#profile-img {
+  max-width: 250px;
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Gaya untuk bagian "About" */
+
+#about {
+  background-color: #fff !important; /* Menambahkan !important untuk memastikan gaya diberikan prioritas */
+}
+
+#about .row {
+  display: flex;
+  align-items: center; /* Menempatkan semua elemen di tengah secara vertikal */
+  
+}
+
+#about .col-md-6 {
+  margin-bottom: 20px; /* Memberikan jarak bawah antara gambar dan teks */
+}
+
+#about .col-md-6 img {
+  margin-bottom: 20px; /* Memberikan jarak bawah pada gambar */
+}
+
+#about .btn-primary {
+  background-color: #ff3399;
+  border-color: #ff3399;
+}
+#about .btn-primary:hover {
+  background-color: #fff;
+  border-color: #ff3399;
+  color: #333;
+}
+
+/* Posisikan gambar di tengah pada perangkat seluler */
+@media (max-width: 767px) {
+  #profile-img {
+    margin: 0 auto 20px; /* Menempatkan gambar di tengah secara horizontal dengan margin bawah 20px */
+    display: block; /* Mengubah gambar menjadi elemen block untuk memungkinkan pengaturan margin auto */
+    float: none; /* Hapus floating pada gambar */
+  }
+}
+
+/* Posisikan gambar di sebelah kanan teks pada perangkat desktop */
+@media (min-width: 768px) {
+  #profile-img {
+    float: right;
+    margin-left: 20px;
+  }
+}
+
+#contact {
+  background-color: #fff;
+}
+
+#contact .btn-primary {
+  background-color: #ff3399;
+  border-color: #ff3399;
+}
+#contact .btn-primary:hover {
+  background-color: #fff;
+  border-color: #ff3399;
+  color: #333;
+}
+
+
+/* Gaya untuk bagian lainnya */
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #ffecf2;
+}
+
+
+.navbar-brand {
+  font-weight: bold;
+}
+
+.navbar-nav .nav-item {
+  margin-left: auto; /* Menggeser elemen navbar-brand ke kanan */
+}
+
+.card {
+  margin-bottom: 30px;
+}
+
+footer {
+  background-color: #ff3399 !important; 
+}
+ 
