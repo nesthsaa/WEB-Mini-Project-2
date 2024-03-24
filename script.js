@@ -66,14 +66,22 @@ document.addEventListener("DOMContentLoaded", function() {
   });
 });
 
-// Animasi pada section Experiences
 document.addEventListener('DOMContentLoaded', function() {
   var experiencesSection = document.getElementById('experiences');
-  var experienceItems = document.querySelectorAll('.experience h4'); // Ubah pemilihan kelas menjadi ".experience h4"
+  var experienceItems = document.querySelectorAll('.experience h4');
 
   window.addEventListener('scroll', function() {
     if (isInViewport(experiencesSection)) {
-      animateExperienceItems();
+      // Mengecek apakah pengguna menggunakan perangkat seluler atau desktop
+      if (isMobile()) {
+        // Jika pengguna menggunakan perangkat seluler, tambahkan kelas 'no-animation' ke setiap item
+        experienceItems.forEach(function(item) {
+          item.classList.add('no-animation');
+        });
+      } else {
+        // Jika pengguna menggunakan desktop, jalankan animasi seperti biasa
+        animateExperienceItems();
+      }
     }
   });
 
@@ -87,29 +95,24 @@ document.addEventListener('DOMContentLoaded', function() {
 
   function isInViewport(element) {
     var rect = element.getBoundingClientRect();
-    // Menggunakan nilai scrollY untuk menyesuaikan posisi viewport
-    var scrollY = window.scrollY || window.pageYOffset;
-    // Menggunakan media query untuk menyesuaikan aturan animasi berdasarkan ukuran layar
-    var mediaQueryList = window.matchMedia('(max-width: 768px)');
-    if (mediaQueryList.matches) {
-      // Hanya mengembalikan true jika setengah dari elemen terlihat di dalam viewport pada perangkat seluler
-      return rect.top <= (window.innerHeight / 2 + scrollY) && rect.bottom >= (window.innerHeight / 2 + scrollY);
-    } else {
-      // Mengembalikan true jika elemen sepenuhnya terlihat di dalam viewport pada desktop
-      return (
-        rect.top >= 0 &&
-        rect.left >= 0 &&
-        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-        rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-      );
-    }
+    return (
+      rect.top >= 0 &&
+      rect.left >= 0 &&
+      rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+      rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+    );
   }
 
-  // Reset hasAnimated to false when leaving the experiences section
+  function isMobile() {
+    return window.matchMedia('(max-width: 768px)').matches;
+  }
+
+  // Reset animasi saat keluar dari bagian pengalaman
   window.addEventListener('scroll', function() {
     if (!isInViewport(experiencesSection)) {
       experienceItems.forEach(function(item) {
         item.classList.remove('show');
+        item.classList.remove('no-animation'); // Hapus kelas 'no-animation'
       });
     }
   });
