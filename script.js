@@ -87,11 +87,13 @@ document.addEventListener('DOMContentLoaded', function() {
 
   function isInViewport(element) {
     var rect = element.getBoundingClientRect();
+    // Menggunakan nilai scrollY untuk menyesuaikan posisi viewport
+    var scrollY = window.scrollY || window.pageYOffset;
     // Menggunakan media query untuk menyesuaikan aturan animasi berdasarkan ukuran layar
     var mediaQueryList = window.matchMedia('(max-width: 768px)');
     if (mediaQueryList.matches) {
       // Hanya mengembalikan true jika setengah dari elemen terlihat di dalam viewport pada perangkat seluler
-      return rect.top <= window.innerHeight / 2 && rect.bottom >= window.innerHeight / 2;
+      return rect.top <= (window.innerHeight / 2 + scrollY) && rect.bottom >= (window.innerHeight / 2 + scrollY);
     } else {
       // Mengembalikan true jika elemen sepenuhnya terlihat di dalam viewport pada desktop
       return (
@@ -112,4 +114,3 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   });
 });
-
