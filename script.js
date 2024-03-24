@@ -53,3 +53,63 @@ document.addEventListener('DOMContentLoaded', function() {
     wrap: true // Jika diatur ke true, slider akan mulai dari awal setelah mencapai slide terakhir dan sebaliknya
   });
 });
+
+// Tambahkan kelas 'navbar-scrolled' saat digulir
+document.addEventListener("DOMContentLoaded", function() {
+  window.addEventListener("scroll", function() {
+    let navbar = document.getElementById("navbar");
+    if (window.scrollY > 50) {
+      navbar.classList.add("navbar-scrolled");
+    } else {
+      navbar.classList.remove("navbar-scrolled");
+    }
+  });
+});
+
+// Animasi pada section Experiences
+document.addEventListener('DOMContentLoaded', function() {
+  var experiencesSection = document.getElementById('experiences');
+  var experienceItems = document.querySelectorAll('.experience h4'); // Ubah pemilihan kelas menjadi ".experience h4"
+
+  window.addEventListener('scroll', function() {
+    if (isInViewport(experiencesSection)) {
+      animateExperienceItems();
+    }
+  });
+
+  function animateExperienceItems() {
+    experienceItems.forEach(function(item, index) {
+      setTimeout(function() {
+        item.classList.add('show');
+      }, index * 500);
+    });
+  }
+
+  function isInViewport(element) {
+    var rect = element.getBoundingClientRect();
+    // Menggunakan media query untuk menyesuaikan aturan animasi berdasarkan ukuran layar
+    var mediaQueryList = window.matchMedia('(max-width: 768px)');
+    if (mediaQueryList.matches) {
+      // Hanya mengembalikan true jika setengah dari elemen terlihat di dalam viewport pada perangkat seluler
+      return rect.top <= window.innerHeight / 2 && rect.bottom >= window.innerHeight / 2;
+    } else {
+      // Mengembalikan true jika elemen sepenuhnya terlihat di dalam viewport pada desktop
+      return (
+        rect.top >= 0 &&
+        rect.left >= 0 &&
+        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+        rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+      );
+    }
+  }
+
+  // Reset hasAnimated to false when leaving the experiences section
+  window.addEventListener('scroll', function() {
+    if (!isInViewport(experiencesSection)) {
+      experienceItems.forEach(function(item) {
+        item.classList.remove('show');
+      });
+    }
+  });
+});
+
