@@ -66,22 +66,14 @@ document.addEventListener("DOMContentLoaded", function() {
   });
 });
 
+// Animasi pada section Experiences
 document.addEventListener('DOMContentLoaded', function() {
   var experiencesSection = document.getElementById('experiences');
-  var experienceItems = document.querySelectorAll('.experience h4');
+  var experienceItems = document.querySelectorAll('.experience h4'); // Ubah pemilihan kelas menjadi ".experience h4"
 
   window.addEventListener('scroll', function() {
     if (isInViewport(experiencesSection)) {
-      // Mengecek apakah pengguna menggunakan perangkat seluler atau desktop
-      if (isMobile()) {
-        // Jika pengguna menggunakan perangkat seluler, tambahkan kelas 'no-animation' ke setiap item
-        experienceItems.forEach(function(item) {
-          item.classList.add('no-animation');
-        });
-      } else {
-        // Jika pengguna menggunakan desktop, jalankan animasi seperti biasa
-        animateExperienceItems();
-      }
+      animateExperienceItems();
     }
   });
 
@@ -103,16 +95,11 @@ document.addEventListener('DOMContentLoaded', function() {
     );
   }
 
-  function isMobile() {
-    return window.matchMedia('(max-width: 768px)').matches;
-  }
-
-  // Reset animasi saat keluar dari bagian pengalaman
+  // Reset hasAnimated to false when leaving the experiences section
   window.addEventListener('scroll', function() {
     if (!isInViewport(experiencesSection)) {
       experienceItems.forEach(function(item) {
         item.classList.remove('show');
-        item.classList.remove('no-animation'); // Hapus kelas 'no-animation'
       });
     }
   });
