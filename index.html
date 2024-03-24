@@ -3,43 +3,49 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portofolio Agnes</title>
+  <title>Portofolio Saya</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
   <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #ff3399;">
-    <a class="navbar-brand" href="#">Agnesia</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-              data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
-              aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav ms-auto">
-        <li class="nav-item">
-          <a class="nav-link" href="#about">About Me</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#certificates">Certificates</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#contact">Contact Me</a>
-        </li>
-      </ul>
-    </div>
-    
-  </nav>
-  
+    <header>
+      <nav id="navbar" class="navbar navbar-expand-lg navbar-dark" style="background-color: #ff3399;">
+        <a class="navbar-brand" href="#">Agnesia</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+                  aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="#about">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#education">Education</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#certificates">Certificates</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#experiences">Experiences</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#contact">Contact Me</a>
+            </li>
+          </ul>
+        </div>  
+      </nav>
+    </header>
 
   <!-- Home Section -->
   <section id="home" class="py-5 vh-100">
     <div class="row mt-5">
       <div class="col-md-6 offset-md-3 text-center">
         <h1>Hello There</h1>
-        <p>This is Agnesia's portofolio website, tap the button to get to know more about me.</p>
+        <p id="intro-text">This is Agnesia's portofolio website, tap the button to get to know more about me.<span id="cursor">|</span></p>
         <a href="#about" class="btn btn-primary">My Profile</a>
       </div>
     </div>
@@ -48,10 +54,10 @@
   <!-- About Section -->
   <section id="about" class="py-5 bg-light">
     <div class="container">
-      <h2 class="text-center mb-4">About Me</h2>
+      <h2 class="text-center mb-4 section-title">About Me</h2>
       <div class="row">
         <div class="col-md-6">
-          <p class="lead">I'm an undergraduate Information System Student at Mulawarman University, currently in my fourth semester. I'm passionate about database systems and management and also UI/UX design.</p>
+          <p class="lead">I'm an undergraduate Information System Student at Mulawarman University, currently in my fourth semester. I'm passionate about <span class="underline-bold">database management system</span> and also <span class="underline-bold">UI/UX design</span>.</p>
           <p>Tap the button below to see my cv</p>
           <a href="https://www.canva.com/design/DAFqNIwKXUI/LofFjaQw0clyF9lv9bFWqA/edit?utm_content=DAFqNIwKXUI&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" class="btn btn-primary" target="_blank">My CV</a>
         </div>
@@ -62,10 +68,42 @@
     </div>
   </section>
 
+<!-- Education Section -->
+<section id="education" class="py-5 bg-light">
+  <div class="container">
+    <h2 class="text-center mb-4 section-title">Education</h2>
+    <!-- Education Timeline -->
+    <div class="row">
+      <!-- Education Timeline Item 1 -->
+      <div class="col-md-6">
+        <div class="timeline-item">
+          <h3>2019-2022</h3>
+          <h4>SMAN 1 Berau</h4>
+          <p class="mb-4">Natural Sciences</p>
+          <!-- Brief Explanation -->
+          <p>Completed high school education from 2019 to 2022 at SMAN 1 Berau, focusing on Natural Sciences. Studied subjects such as Physics, Chemistry, and Biology.</p>
+        </div>
+      </div>
+      <!-- Education Timeline Item 2 -->
+      <div class="col-md-6">
+        <div class="timeline-item">
+          <h3>2022-Now</h3>
+          <h4>Mulawarman University</h4>
+          <p class="mb-4">Information System</p>
+          <!-- Brief Explanation -->
+          <p>Currently pursuing a degree in Information System at Mulawarman University since 2022. Studying various subjects related to Information Technology, including Database Management, Programming, Information Security, and User Interface Design.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
 <!-- Certificates Section -->
 <section id="certificates" class="py-5 bg-light">
   <div class="container">
-    <h2 class="text-center mb-4">Certificates</h2>
+    <h2 class="text-center mb-4 section-title">Certificates</h2>
     <div class="row">
       <div class="col-lg-4">
         <div class="card h-100">
@@ -95,14 +133,36 @@
   </div>
 </section>
 
+<!-- Experiences Section -->
+<section id="experiences" class="py-5">
+  <div class="container">
+    <h2 class="text-center mb-5 section-title">Experiences</h2>
+    <div class="experience">
+      <h4 class="experience-item">Anggota Divisi Acara Makrab Sistem Informasi 2022</h4>
+    </div>
+    <div class="experience">
+      <h4 class="experience-item">Staff Departemen Relekat Inforsa (2023)</h4>
+    </div>
+    <div class="experience">
+      <h4 class="experience-item">Divisi PJ Lomba Insevent 2023</h4>
+    </div>
+    <div class="experience">
+      <h4 class="experience-item">Penanggung Jawab Sosialisasi SMP Pengabdian Masyarakat 2023</h4>
+    </div>
+    <div class="experience">
+      <h4 class="experience-item">Bina Damping Aplikasi 2023</h4>
+    </div>    
   </div>
 </section>
+
+
+
 
     <!-- Contact Section -->
 
   <section id="contact" class="p-5 pt-0">
     <div class="container mt-3 contactContent">
-        <h1 class="text-center">Contact Me</h1>
+        <h1 class="text-center mb-4 section-title">Contact Me</h1>
 
         <div class="row mt-4">
             <div class="col-lg-6">
@@ -122,7 +182,7 @@
                 <form id="contact-form">
                   <input type="text" id="name" class="form-control form-control-lg" placeholder="Name">
                   <input type="email" id="email" class="form-control mt-3" placeholder="Email">
-                  <input type="text" id="subject" class="form-control mt-3" placeholder="Subject">
+                  <input type="text" id="subject" class="form-control mt-3" placeholder="Project Title">
                   <div class="mb-3 mt-3">
                       <textarea class="form-control" id="comment" rows="5" name="text" placeholder="Project Details"></textarea>
                   </div>
@@ -148,5 +208,12 @@
   <footer class="bg-#ff3399 text-white text-center py-3">
     <div class="container">
       <p>Hak Cipta &copy; 2024 | Agnesia Prawini Thesalonika</p>
+      <!-- Social Media Icons -->
+      <div class="social-icons mt-3">
+        <a href="mailto:agnesiaprawini2019@gmail.com" class="text-white"><i class="far fa-envelope"></i></a>
+        <a href="https://www.instagram.com/nesthsaa?igsh=ZmF0ejhvNTl2dnp2" class="text-white"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.linkedin.com/in/agnesia-prawini-thesalonika-592855261/" class="text-white"><i class="fab fa-linkedin-in"></i></a>
+      </div>
     </div>
   </footer>
+  
