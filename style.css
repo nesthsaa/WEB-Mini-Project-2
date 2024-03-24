@@ -1,16 +1,47 @@
+/* header */
+.navbar {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1000; /* Membuat navbar muncul di atas konten lain */
+  border-radius: 0 0 15px 15px; /* Tambahkan radius sudut pada bagian bawah navbar */
+}
+
+
+/* Gaya untuk Navbar */
+.navbar {
+  padding-left: 0; /* Menggeser navbar ke kiri */
+}
+
+.navbar-brand {
+  font-family: 'Lucida Handwriting', cursive;
+  font-weight: bold;
+  padding-left: 20px;
+}
+
+.navbar-nav {
+  margin-left: auto; /* Menggeser item navbar ke kanan */
+}
+
+.navbar-nav .nav-link {
+  padding-left: 15px; /* Menambahkan padding kiri pada link */
+  padding-right: 15px;
+}
+
 /* Gaya untuk bagian "home" */
 /* Gaya untuk bagian "home" */
 #home {
   font-family: Arial, sans-serif;
-  background-image: url(https://i2.wp.com/wallpapercave.com/wp/wp2973341.jpg); /* Ganti 'url_gambar_anda_di_sini' dengan URL gambar yang ingin Anda gunakan */
+  background-image: url(https://i2.wp.com/wallpapercave.com/wp/wp2973341.jpg); 
   background-size: cover; /* Untuk memastikan gambar mengisi seluruh area background */
   background-repeat: no-repeat; /* Agar gambar tidak diulang */
   margin-bottom: 20px;
-  padding: 50px 0; /* Tambahkan padding atas dan bawah */
+  /* padding: 50px 0; Tambahkan padding atas dan bawah */
 }
 
 #home .text-center {
-  margin-top: 100px; /* Atur sesuai kebutuhan Anda */
+  margin-top: 100px; 
 }
 
 #home h1 {
@@ -25,7 +56,7 @@
 }
 
 #home .text-center {
-  margin-top: 100px; /* Atur sesuai kebutuhan Anda */
+  margin-top: 100px; 
 }
 
 #home h1 {
@@ -44,6 +75,35 @@
   border-color: #ff3399;
   color: #333;
 }
+
+#intro-text {
+  overflow: hidden; /* Mencegah teks keluar dari area yang ditetapkan */
+  white-space: nowrap; /* Mencegah teks untuk pindah ke baris baru */
+  animation: typing 7s steps(40) forwards; /* Membuat animasi mengetik */
+}
+
+#cursor {
+  animation: blink 1s infinite; /* Membuat animasi cursor berkedip */
+}
+
+@keyframes typing {
+  from {
+    width: 0; /* Memulai dari lebar 0 */
+  }
+  to {
+    width: 100%; /* Berakhir dengan lebar 100% */
+  }
+}
+
+@keyframes blink {
+  0%, 100% {
+    opacity: 1; /* Cursor terlihat pada awal dan akhir */
+  }
+  50% {
+    opacity: 0; /* Cursor tidak terlihat di tengah */
+  }
+}
+
 
 /* Gaya untuk gambar profil */
 #profile-img {
@@ -82,6 +142,20 @@
   color: #333;
 }
 
+.underline-bold {
+  display: inline-block;
+  text-decoration: underline;
+  text-decoration-thickness: 2px; 
+  text-decoration-color: #ff3399; 
+}
+
+
+.lead {
+  word-wrap: break-word;
+}
+
+
+
 /* Posisikan gambar di tengah pada perangkat seluler */
 @media (max-width: 767px) {
   #profile-img {
@@ -99,9 +173,102 @@
   }
 }
 
+
+/* Gaya untuk bagian "Education" */
+#education {
+  background-color: #ffecf2 !important; 
+  padding: 50px 0;
+}
+
+#education h2 {
+  color: #333;
+  font-weight: bold;
+  font-size: 30px;
+  margin-bottom: 30px;
+}
+
+.timeline-item {
+  margin-bottom: 50px;
+}
+
+.timeline-item h3 {
+  color: #ff3399;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.timeline-item h4 {
+  color: #333;
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.timeline-item p {
+  color: #666;
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+
+/* Gaya untuk bagian "Experiences" */
+#experiences {
+  background-color: #f9f9f9;
+  padding: 50px 0;
+}
+
+.experience {
+  margin-bottom: 40px;
+  padding: 20px;
+  /* Menggunakan latar belakang gradient */
+  background-image: linear-gradient(to bottom right, #ffffff, #ffecf2);
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.experience h4 {
+  color: #333;
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.experience p {
+  color: #666;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+
+
+
+/* Tata letak satu kolom pada perangkat seluler */
+@media (max-width: 767px) {
+  .experience {
+    width: 100%;
+  }
+}
+
+/* Tata letak dua kolom pada perangkat desktop */
+@media (min-width: 768px) {
+  .experience {
+    width: calc(50% - 20px); /* 20px untuk margin antar kolom */
+    display: inline-block;
+    vertical-align: top;
+    margin-right: 20px;
+  }
+
+  /* Mengatur margin kanan pada elemen terakhir di baris untuk mencegah celah */
+  .experience:nth-child(2n) {
+    margin-right: 0;
+  }
+}
+
 #contact {
   background-color: #fff;
 }
+
 
 #contact .btn-primary {
   background-color: #ff3399;
@@ -117,17 +284,9 @@
 /* Gaya untuk bagian lainnya */
 body {
   font-family: 'Arial', sans-serif;
-  background-color: #ffecf2;
+  /* background-color: #ffecf2; */
 }
 
-
-.navbar-brand {
-  font-weight: bold;
-}
-
-.navbar-nav .nav-item {
-  margin-left: auto; /* Menggeser elemen navbar-brand ke kanan */
-}
 
 .card {
   margin-bottom: 30px;
@@ -136,4 +295,84 @@ body {
 footer {
   background-color: #ff3399 !important; 
 }
- 
+
+/* Gaya untuk logo sosial media */
+.social-icons a {
+  display: inline-block;
+  width: 50px; /* Lebar dan tinggi ikon */
+  height: 50px;
+  border-radius: 50%; /* Membuat bentuk lingkaran */
+  background-color: #ff69b4; /* Warna latar belakang */
+  text-align: center;
+  line-height: 50px;
+  margin-right: 10px; /* Spasi antara ikon */
+}
+
+.social-icons a:hover {
+  background-color: #e60073; /* Warna latar belakang saat dihover */
+}
+
+/* Gaya ikon di dalam lingkaran */
+.social-icons i {
+  font-size: 24px; /* Ukuran ikon */
+  color: #fff; /* Warna ikon */
+}
+
+/* Animasi saat menggulir */
+.section {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s, transform 0.5s;
+}
+
+.section.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Efek hover pada tautan navbar */
+.nav-link:hover {
+  color: #fff !important;
+  text-decoration: none;
+}
+
+/* Efek hover pada tombol */
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Validasi input yang tidak valid */
+.input-invalid {
+  border-color: #dc3545 !important;
+}
+
+.input-invalid-feedback {
+  color: #dc3545;
+  display: none;
+}
+
+/* Warna navbar saat digulir */
+.navbar-scrolled {
+
+  background-image: linear-gradient(to bottom right, #e63e62, #de5285);
+  transition: background-color 0.3s ease-in-out;
+}
+
+.section-title {
+  text-decoration: underline;
+  text-decoration-thickness: 5px; 
+  text-decoration-color: #ff3399; 
+  margin-bottom: 10px; 
+}
+
+.experience-item {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s, transform 0.5s;
+}
+
+.experience-item.show {
+  opacity: 1;
+  transform: translateY(0);
+}
