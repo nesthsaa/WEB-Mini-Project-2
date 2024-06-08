@@ -29,6 +29,8 @@
   padding-right: 15px;
 }
 
+
+
 /* Gaya untuk bagian "home" */
 /* Gaya untuk bagian "home" */
 #home {
@@ -211,6 +213,16 @@
   margin-bottom: 20px;
 }
 
+#projects .btn-primary {
+  background-color: #ff3399;
+  border-color: #ff3399;
+}
+
+#projects .btn-primary:hover {
+  background-color: #fff;
+  border-color: #ff3399;
+  color: #333;
+}
 
 /* Gaya untuk bagian "Experiences" */
 #experiences {
